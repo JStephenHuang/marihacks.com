@@ -2,23 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
+  /* Two in a row */
+  .sponsor-logo-gold {
+    @apply m-3 w-full h-full
+    lg:m-8;
+  }
 
-    /* Two in a row */
-    .sponsor-logo-gold {
-        @apply m-8 h-[250px]
-    }
+  /* Three in a row */
+  .sponsor-logo-silver {
+    @apply m-3
+    lg:m-8;
+  }
 
-    /* Three in a row */
-    .sponsor-logo-silver {
-        @apply m-8 h-[125px]
-    }
+  .sponsor-card {
+    box-shadow: 4px 4px 0px 0px var(--border-main-color);
+    @apply h-full rounded-lg border border-[--border-main-color] bg-white mx-8 p-8
+    dark:bg-white;
+  }
 
+  .sponsors-button {
+    box-shadow: 2px 2px 0px 0px var(--border-main-color);
+    @apply px-[20px] py-[10px]
+    rounded-2xl border border-[--border-main-color]
+    hover:translate-x-[2px] hover:translate-y-[2px]
+    transition bg-[--primary-color] 
+    text-white mt-5;
+  }
+
+  .sponsors-button:hover {
+    box-shadow: 0px 0px 0px 0px var(--border-main-color);
+  }
+
+  @media (max-width: 768px) {
     .sponsor-card {
-        box-shadow:4px 4px 0px 0px rgba(106,120,171); 
-        @apply h-full rounded-lg mx-5 border border-[#6A78AB] bg-white m-4
+      box-shadow: 2px 2px 0px 0px var(--border-main-color);
     }
-    
-    
+    .sponsors-button {
+      @apply text-[12px] px-[10px] py-[4px] rounded-xl;
+    }
+  }
 }

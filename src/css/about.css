@@ -2,24 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
-    .about-carousel {
-        box-shadow: 6px 6px 0px 0px rgba(106,120,171); 
-        @apply w-full rounded-2xl border
-        border-[#6A78AB]
-    }
-    
+  .about-container {
+    @apply flex flex-col lg:flex-row w-full;
+  }
+  .about-carousel {
+    box-shadow: 6px 6px 0px 0px rgba(106, 120, 171);
+    @apply w-full rounded-2xl border
+        border-[#6A78AB];
+  }
 
+  .about-card {
+    box-shadow: 6px 6px 0px 0px rgba(106, 120, 171);
+    @apply rounded-2xl border w-1/2 flex flex-col justify-center md:mr-10 
+    border-[#6A78AB] bg-white p-10
+    md:text-[20px];
+  }
 
+  .about-caret {
+    @apply text-[20px] text-white absolute mx-3
+    md:text-[32px];
+  }
+
+  @media (max-width: 1024px) {
     .about-card {
-        box-shadow: 6px 6px 0px 0px rgba(106,120,171); 
-        @apply rounded-2xl border w-1/2 flex items-center justify-center mr-10 
-        border-[#6A78AB] bg-white
+      box-shadow: 2px 2px 0px 0px rgba(106, 120, 171);
+      @apply w-full p-5 mr-0 mb-5;
     }
 
-    .about-caret {
-        @apply text-[32px] text-white absolute mx-3
+    .about-carousel {
+      box-shadow: 2px 2px 0px 0px rgba(106, 120, 171);
+    }
+  }
+
+  @media (max-width: 1280px) {
+    .about-card {
+      box-shadow: 2px 2px 0px 0px rgba(106, 120, 171);
+      @apply w-1/2 p-5 mr-10 text-[14px];
     }
 
+    .about-carousel {
+      box-shadow: 2px 2px 0px 0px rgba(106, 120, 171);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .about-card {
+      @apply w-full;
+    }
+
+    .about-carousel {
+      box-shadow: 2px 2px 0px 0px rgba(106, 120, 171);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-card {
+      box-shadow: 2px 2px 0px 0px rgba(106, 120, 171);
+      @apply w-full p-5 mr-0 mb-5 text-[12px];
+    }
+
+    .about-carousel {
+      box-shadow: 2px 2px 0px 0px rgba(106, 120, 171);
+    }
+  }
 }

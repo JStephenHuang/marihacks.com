@@ -1,29 +1,31 @@
 import "../css/carousel.css";
 
+import { imageManager } from "../helper/ressourceManagers";
+
 const CarouselItem = ({ img }: { img: string }) => {
   return <img className="carousel-img" src={img} />;
 };
 
 const Carousel = () => {
-  const images: string[] = [
-    "../../carousel/img1.jpg",
-    "../../carousel/img2.jpg",
-    "../../carousel/img3.jpg",
-    "../../carousel/DSCF5800.jpg",
-    "../../carousel/DSCF5872.jpg",
-    "../../carousel/DSCF5928.jpg",
-    "../../carousel/DSCF5938.jpg",
-    "../../carousel/DSCF5946.jpg",
-  ];
+  const images = [];
+
+  for (let i = 1; i < 9; i++) {
+    images.push(imageManager(`${i}`).carouselImg);
+  }
+
   return (
-    <div className="carousel-container">
-      <div className="carousel-track">
-        {images.map((image) => {
-          return <CarouselItem img={image}></CarouselItem>;
-        })}
-        {images.map((image) => {
-          return <CarouselItem img={image}></CarouselItem>;
-        })}
+    <div className="w-full flex flex-col items-center">
+      <hr className="w-1/4 border border-black my-4 md:my-8" />
+
+      <div className="carousel-container">
+        <div className="carousel-track">
+          {images.map((image) => {
+            return <CarouselItem img={image}></CarouselItem>;
+          })}
+          {images.map((image) => {
+            return <CarouselItem img={image}></CarouselItem>;
+          })}
+        </div>
       </div>
     </div>
   );

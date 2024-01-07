@@ -1,20 +1,51 @@
-@import url('general-sans.css');
+@import url("general-sans.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+#about {
+  scroll-margin-top: 100px;
+}
 
-:root {
-    font-family: 'GeneralSans-Medium';
+#sponsors {
+  scroll-margin-top: 100px;
+}
+
+#FAQ {
+  scroll-margin-top: 100px;
+}
+
+@layer components {
+  :root {
+    font-family: "GeneralSans-Medium";
     scroll-behavior: smooth;
-    --primary-color: #081E74;
-    --secondary-color: #DDEDFF;
-    --border-main-color: #6A78AB;
+    --primary-color: #081e74;
+    --secondary-color: #ddedff;
+    --spaceColor: black;
+    --border-main-color: #6a78ab;
+    overscroll-behavior-y: contain;
+    background-color: var(--secondary-color);
+  }
 
+  .font-bold {
+    font-family: "GeneralSans-Bold";
+  }
+
+  .font-light {
+    font-family: "GeneralSans-Light";
+  }
+
+  .section-title {
+    @apply text-[24px] font-bold text-center
+    md:text-[48px];
+  }
+
+  .section-subtitle {
+    @apply text-center text-[14px]
+    md:text-[24px];
+  }
+
+  @media (max-width: 768px) {
+  }
 }
-
-.boldText {
-    font-family: 'GeneralSans-Bold';
-}
-

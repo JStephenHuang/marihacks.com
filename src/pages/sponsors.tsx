@@ -1,9 +1,13 @@
 import "../css/sponsors.css";
 
+import { Link } from "react-router-dom";
+import { imageManager } from "../helper/ressourceManagers";
+import { sponsors } from "../docs/sponsors";
+
 const GoldSponsor = ({ imgSrc, link }: { imgSrc: string; link: string }) => {
   return (
     <a className="sponsor-logo-gold" href={link}>
-      <img className="h-full" src={imgSrc} alt="" />
+      <img className="w-full" src={imgSrc} alt={link} />
     </a>
   );
 };
@@ -11,34 +15,41 @@ const GoldSponsor = ({ imgSrc, link }: { imgSrc: string; link: string }) => {
 const SilverSponsor = ({ imgSrc, link }: { imgSrc: string; link: string }) => {
   return (
     <a className="sponsor-logo-silver" href={link}>
-      <img className="h-full" src={imgSrc} alt="" />
+      <img className="w-full" src={imgSrc} alt={link} />
     </a>
   );
 };
 
 const Sponsors = () => {
-  const sponsors = {
-    uofm: { imgUrl: "../../sponsors/uofm.png", link: "" },
-    marianopolis: { imgUrl: "../../sponsors/mari.png", link: "" },
-    onepassword: { imgUrl: "../../sponsors/1password.png", link: "" },
-    wolfram: {
-      imgUrl: "../../sponsors/wolfram.png",
-      link: "https://www.wolfram.com/",
-    },
-    echo: { imgUrl: "../../sponsors/echo.png", link: "" },
-    brebeufhx: { imgUrl: "../../sponsors/brebeufhx.png", link: "" },
-    brebeufhxnoir: { imgUrl: "../../sponsors/brebeufhxnoir.png", link: "" },
-    mlh: "../../sponsors/mlh.png",
-  };
   return (
     <div className="w-full flex flex-col items-center">
-      <hr className="w-1/4 border border-black my-8" />
+      <hr className="w-1/4 border border-black my-4 md:my-8" />
 
       <div className="sponsor-card">
-        <div className="flex justify-center">
+        {/* <div className="grid grid-cols-2 gap-8">
+          {sponsorsArray.map((sponsor: SponsorInfo) => {
+            return <GoldSponsor imgSrc={sponsor.imgUrl} link={sponsor.link} />;
+          })}
+        </div> */}
+
+        <div className="flex md:flex-row flex-col items-center justify-center">
+          <GoldSponsor imgSrc={sponsors.nbc.imgUrl} link={sponsors.nbc.link} />
+          <GoldSponsor
+            imgSrc={sponsors.leadingleaders.imgUrl}
+            link={sponsors.leadingleaders.link}
+          />
+        </div>
+        <div className="flex md:flex-row flex-col items-center justify-center">
+          <GoldSponsor imgSrc={sponsors.msu.imgUrl} link={sponsors.msu.link} />
+          <GoldSponsor
+            imgSrc={sponsors.concordia.imgUrl}
+            link={sponsors.concordia.link}
+          />
+        </div>
+        <div className="flex items-center md:flex-row flex-col justify-center">
           <GoldSponsor
             imgSrc={sponsors.uofm.imgUrl}
-            link={sponsors.marianopolis.link}
+            link={sponsors.uofm.link}
           />
           <GoldSponsor
             imgSrc={sponsors.marianopolis.imgUrl}
@@ -46,29 +57,45 @@ const Sponsors = () => {
           />
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex md:flex-row flex-col justify-center items-center">
           <SilverSponsor
             imgSrc={sponsors.onepassword.imgUrl}
-            link="https://1password.com/"
+            link={sponsors.onepassword.link}
           />
           <SilverSponsor
             imgSrc={sponsors.wolfram.imgUrl}
             link={sponsors.wolfram.link}
           />
-          <SilverSponsor imgSrc={sponsors.echo.imgUrl} link="" />
+          <SilverSponsor
+            imgSrc={sponsors.echo.imgUrl}
+            link={sponsors.echo.link}
+          />
         </div>
       </div>
 
-      <p className="boldText text-[48px] mt-8">Partners</p>
-      <p className="text-[24px]">We work with the best.</p>
-      <hr className="w-1/4 border border-black my-8" />
-
-      <div className="flex justify-center sponsor-card">
-        <SilverSponsor imgSrc={sponsors.mlh} link="" />
-        <SilverSponsor imgSrc={sponsors.brebeufhxnoir.imgUrl} link="" />
+      <div className="flex md:my-8 mb-4">
+        <Link className="sponsors-button mr-5" to="/sponsorship">
+          Become a sponsor
+        </Link>
+        <a
+          className="sponsors-button"
+          href={imageManager("prospectus_2024").pdf}
+        >
+          See prospectus
+        </a>
       </div>
 
-      {/* Prospectus */}
+      <p className="font-bold section-title">Partners</p>
+      <p className="section-subtitle">We work with the best.</p>
+      <hr className="w-1/4 border border-black my-4 md:my-8" />
+
+      <div className="sponsor-card md:w-1/2 flex items-center">
+        <SilverSponsor imgSrc={sponsors.mlh.imgUrl} link={sponsors.mlh.link} />
+        <SilverSponsor
+          imgSrc={sponsors.brebeufhxnoir.imgUrl}
+          link={sponsors.brebeufhxnoir.link}
+        />
+      </div>
     </div>
   );
 };

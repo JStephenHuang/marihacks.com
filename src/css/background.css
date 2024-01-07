@@ -1,34 +1,30 @@
 .spacer {
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
+  position: absolute;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.layer1 {
-    background-image: url("../../bg.svg");
-}
-
-.wave-layer {
-    background-image: url("../../wave2.svg");
-}
 .stars {
-    background-attachment: fixed;
-    background-image: url("../../stars.svg");
+  background-image: url("/stars.svg");
+  background-repeat: repeat;
 }
 
-.img1 {
-    background-image: url("../../carousel/img1.jpg");
-
+.wave {
+  background-image: url("/bg.svg");
+  height: 200px;
+  bottom: 0;
 }
 
-.img2 {
-    background-image: url("../../carousel/img2.jpg");
-
+@media (max-height: 800px) {
+  .wave {
+    height: 100px;
+  }
 }
 
-.img3 {
-    background-image: url("../../carousel/img3.jpg");
-
+@media (max-width: 768px) {
+  .wave {
+    height: 100px;
+  }
 }

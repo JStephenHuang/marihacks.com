@@ -3,18 +3,79 @@
 @tailwind utilities;
 
 @layer components {
+  .subtitle {
+    box-shadow: 2px 2px 0px 0px rgba(255, 224, 59, 0.55);
+    @apply px-[15px] py-[10px] w-fit text-[20px]
+    border border-black rounded-2xl bg-[#FFE03B];
+  }
+
+  .title {
+    /* MARI HACKS */
+
+    /* MARI HACKS */
+    font-size: 175px;
+    line-height: 73%;
+    /* or 142px */
+    text-shadow: 6px 6px 0px rgba(255, 255, 255, 0.55);
+    letter-spacing: -0.08em;
+    color: var(--spaceColor);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+    @apply text-center lg:text-left;
+  }
+
+  .landing-img {
+    @apply w-2/5;
+  }
+
+  @media (max-width: 1400px) {
     .title {
-        text-shadow: 6px 6px rgba(255, 255, 255);
-        -webkit-text-stroke-width: 3px;
-        -webkit-text-stroke-color: white;
-        @apply -tracking-[12px] 
-    }
-    
-    .subtitle {
-        box-shadow: 2px 2px 0px 0px rgba(255,224,59, 0.55);
-        @apply px-[15px] py-[10px] w-fit
-        border border-black rounded-2xl bg-[#FFE03B]
+      text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.55);
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: white;
+      @apply -tracking-[3px] text-[130px] leading-[94px];
     }
 
-   
+    .subtitle {
+      @apply text-[16px] px-[10px] py-[5px] rounded-lg;
+    }
+
+    .landing-img {
+      @apply w-2/5;
+    }
+  }
+
+  @media (max-height: 900px) {
+    .title {
+      text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.55);
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: white;
+      @apply -tracking-[3px] text-[130px] leading-[94px];
+    }
+
+    .subtitle {
+      @apply text-[16px] px-[10px] py-[5px] rounded-lg;
+    }
+
+    .landing-img {
+      @apply w-2/5;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.55);
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: white;
+      @apply -tracking-[3px] text-[90px] leading-[66px];
+    }
+
+    .subtitle {
+      @apply text-[12px] px-[10px] py-[4px] rounded-lg;
+    }
+
+    .landing-img {
+      @apply w-4/5;
+    }
+  }
 }

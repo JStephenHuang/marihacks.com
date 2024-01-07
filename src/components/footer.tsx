@@ -1,26 +1,48 @@
 import "../css/footer.css";
 
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import { SiFacebook, SiGmail, SiInstagram, SiLinkedin } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <footer className="mt-20 h-[150px] bg-[--primary-color] p-6 text-white">
-      <p className="boldText text-[24px]">Socials</p>
-      <a href="" className="footer-social-info">
-        <FaInstagram />
-        <p className="ml-2">marihacks</p>
-      </a>
-      <a
-        href="https://www.facebook.com/marihacks/"
-        className="footer-social-info"
-      >
-        <FaFacebookF />
-        <p className="ml-2">marihacks</p>
-      </a>
-      <a href="" className="footer-social-info">
-        <FaLinkedinIn />
-        <p className="ml-2">marihacks</p>
-      </a>
+    <footer className="flex items-center justify-between mt-8 h-[80px] md:h-[125px] bg-[--primary-color] px-6 py-2 text-white">
+      <div className="h-2/3 md:h-full flex items-center">
+        <img
+          className="hidden md:block h-full mr-5"
+          src="./images/duck_logo.png"
+          alt=""
+        />
+        <p className="font-bold md:text-[24px]">MariHacks</p>
+      </div>
+
+      <div className="flex flex-col items-end justify-between md:flex-row md:items-center md:text-[24px]">
+        <div className="flex items-center">
+          <a
+            href="https://www.instagram.com/marihacks/"
+            className="footer-social-info"
+          >
+            <SiInstagram />
+          </a>
+          <a
+            href="https://www.facebook.com/marihacks/"
+            className="footer-social-info"
+          >
+            <SiFacebook />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/marihacks/"
+            className="footer-social-info"
+          >
+            <SiLinkedin />
+          </a>
+        </div>
+        <a
+          href="mailto:team@marihacks.com"
+          className="footer-social-info mt-2 md:mt-0"
+        >
+          <SiGmail />
+          <p className="ml-2">team@marihacks.com</p>
+        </a>
+      </div>
     </footer>
   );
 };
